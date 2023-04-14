@@ -40,4 +40,7 @@ Route::get('/', function () {
 
 use App\Http\Controllers\PostsController;
 
-Route::get('/post/{id}', [PostsController::class, 'index']);
+// Route::get('/post/{id}', [PostsController::class, 'index']);
+
+Route::resource('posts', PostsController::class);
+
