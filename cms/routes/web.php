@@ -42,6 +42,8 @@ use App\Http\Controllers\PostsController;
 
 // Route::get('/post/{id}', [PostsController::class, 'index']);
 
-Route::resource('posts', PostsController::class);
+// Route::resource('posts', PostsController::class);
 
 Route::get('/contact', 'App\Http\Controllers\PostsController@contact');
+
+Route::get('post/{id}/{name}/{password}', 'App\Http\Controllers\PostsController@show_post');
