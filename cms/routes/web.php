@@ -17,23 +17,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function () {
-    return "Hi about page";
-});
+// Route::get('/about', function () {
+//     return "Hi about page";
+// });
 
-Route::get('/contact', function () {
-    return "Contact!";
-});
+// Route::get('/contact', function () {
+//     return "Contact!";
+// });
 
-Route::get('/post/{id}', function ($id) {
-    return "This is post number ".$id;
-});
+// Route::get('/post/{id}', function ($id) {
+//     return "This is post number ".$id;
+// });
 
-Route::get('/post/{id}/{name}', function ($id, $name) {
-    return "This is post number ".$id." by ".$name;
-});
+// Route::get('/post/{id}/{name}', function ($id, $name) {
+//     return "This is post number ".$id." by ".$name;
+// });
 
-Route::get('/admin/posts/example', array("as" => "admin.home", function () {
-    $url = route('admin.home');
-    return "this url is ".$url;
-}));
+// Route::get('/admin/posts/example', array("as" => "admin.home", function () {
+//     $url = route('admin.home');
+//     return "this url is ".$url;
+// }));
+
+use App\Http\Controllers\PostsController;
+
+Route::get('/post', [PostsController::class, 'index']);
