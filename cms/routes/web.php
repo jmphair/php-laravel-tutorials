@@ -32,3 +32,8 @@ Route::get('/post/{id}', function ($id) {
 Route::get('/post/{id}/{name}', function ($id, $name) {
     return "This is post number ".$id." by ".$name;
 });
+
+Route::get('/admin/posts/example', array("as" => "admin.home", function () {
+    $url = route('admin.home');
+    return "this url is ".$url;
+}));
