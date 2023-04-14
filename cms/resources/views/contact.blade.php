@@ -1,15 +1,13 @@
-<!DOCTYPE html>
+@extends('layouts.app')
 
-<html>
-<head>
-    <title>Laravel</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="text/css">
-</head>
-<body>
-    <div class="container">
+@section('content')
 
-        <h1>Contact Page</h1>
+    <h1>Contact Page</h1>
 
-    </div>
-</body>
-</html>
+@stop
+
+@section('footer')
+
+    <script>alert('Hello visitor!')</script>
+
+@stop
