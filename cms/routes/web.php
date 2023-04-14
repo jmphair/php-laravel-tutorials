@@ -44,3 +44,4 @@ use App\Http\Controllers\PostsController;
 
 Route::resource('posts', PostsController::class);
 
+Route::get('/contact', 'App\Http\Controllers\PostsController@contact');
