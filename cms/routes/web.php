@@ -64,6 +64,8 @@ use Illuminate\Support\Facades\Route;
 
 // });
 
+use Illuminate\Support\Facades\DB;
+
 Route::get('/read', function() {
 
     $results = DB::select('select * from posts where id = ?', [1]);
