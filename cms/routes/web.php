@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+
+//     return view('welcome');
+
+// });
 
 // Route::get('/about', function () {
 //     return "Hi about page";
@@ -38,12 +40,26 @@ Route::get('/', function () {
 //     return "this url is ".$url;
 // }));
 
-use App\Http\Controllers\PostsController;
+// use App\Http\Controllers\PostsController;
 
 // Route::get('/post/{id}', [PostsController::class, 'index']);
 
 // Route::resource('posts', PostsController::class);
 
-Route::get('/contact', 'App\Http\Controllers\PostsController@contact');
+// Route::get('/contact', 'App\Http\Controllers\PostsController@contact');
 
-Route::get('post/{id}/{name}/{password}', 'App\Http\Controllers\PostsController@show_post');
+// Route::get('post/{id}/{name}/{password}', 'App\Http\Controllers\PostsController@show_post');
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+*/
+
+use Illuminate\Support\Facades\DB;
+
+Route::get('/insert', function(){
+
+    DB::insert('insert into posts(title, content) values(?, ?)', ['PHP with Laravel', 'Laravel is the best thing that has happened to PHP']);
+
+});
