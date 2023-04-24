@@ -64,15 +64,26 @@ use Illuminate\Support\Facades\Route;
 
 // });
 
+// use Illuminate\Support\Facades\DB;
+
+// Route::get('/read', function() {
+
+//     $results = DB::select('select * from posts where id = ?', [1]);
+
+//     return $results;
+
+//     // foreach($results as $post) {
+//     //     return $post->title;
+//     // }
+// });
+
+
 use Illuminate\Support\Facades\DB;
 
-Route::get('/read', function() {
+Route::get('/update', function() {
 
-    $results = DB::select('select * from posts where id = ?', [1]);
+    $updated = DB::update('update posts set title = "Updated title" where id = ?', [1]);
 
-    return $results;
+    return $updated;
 
-    // foreach($results as $post) {
-    //     return $post->title;
-    // }
 });
