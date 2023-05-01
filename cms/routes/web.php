@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -88,12 +90,28 @@ use Illuminate\Support\Facades\Route;
 
 // });
 
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\DB;
 
-Route::get('/delete', function() {
+// Route::get('/delete', function() {
 
-    $deleted = DB::delete('delete from posts where id = ?', [1]);
+//     $deleted = DB::delete('delete from posts where id = ?', [1]);
 
-    return $deleted;
+//     return $deleted;
+
+// });
+
+/*
+|--------------------------------------------------------------------------
+| ELOQUENT ORM
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/find', function() {
+
+    $posts = Post::all();
+
+    foreach($posts as $post) {
+        return $post->title;
+    }
 
 });
